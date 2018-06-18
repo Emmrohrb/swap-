@@ -1,0 +1,44 @@
+
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+void badSwap(int x, int y);//the swap
+void goodSwap(int& x, int& y);
+
+int main()
+{
+	int myScore = 150; //original values
+	int yourScore = 1000;// your account 
+	cout << "Original Account values \n";
+	cout << "myAccount: " << myScore << "/n";
+	cout << "yourAccount: " << yourScore << "/n";
+
+	cout << "losing money()\n";
+	badSwap(myScore, yourScore);
+	cout << "myAccount:" << myScore << "/n";
+	cout << "yourAccount:" << yourScore << "\n\n";
+
+	cout << "getting money()\n";//the swapping of money 
+	goodSwap(myScore, yourScore);
+	cout << "myAccount: " << myScore << "\n";//gain 
+	cout << "yourAccount: " << yourScore << "\n";//loss
+	return 0;
+
+}
+
+void badSwap(int x, int y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+
+}
+void goodSwap(int& x, int& y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+}
